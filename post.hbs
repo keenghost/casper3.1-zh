@@ -50,11 +50,11 @@ into the {body} of the default.hbs template --}}
                                         <div class="bio">
                                             <h2>{{name}}</h2>
                                             <p>{{bio}}</p>
-                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
+                                            <p><a href="{{url}}">更多 {{name}} 的文章</a></p>
                                         </div>
                                         {{else}}
                                         <h2>{{name}}</h2>
-                                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                                        <p><a href="{{url}}">阅读更多</a>此作者的文章</p>
                                         {{/if}}
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@ into the {body} of the default.hbs template --}}
                         <section class="post-full-byline-meta">
                             <h4 class="author-name">{{authors}}</h4>
                             <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                                <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD HH:mm:ss"}}">{{date format="YYYY-MM-DD"}}</time>
                                 <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
                             </div>
                         </section>
@@ -135,7 +135,7 @@ into the {body} of the default.hbs template --}}
                 <article class="read-next-card">
                     <header class="read-next-card-header">
                         {{#../primary_tag}}
-                        <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
+                        <h3><span>更多查看</span> <a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
                     </header>
                     <div class="read-next-card-content">
@@ -144,7 +144,7 @@ into the {body} of the default.hbs template --}}
                             <li>
                                 <h4><a href="{{url}}">{{title}}</a></h4>
                                 <div class="read-next-card-meta">
-                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> –
+                                    <p><time datetime="{{date format="YYYY-MM-DD HH:mm:ss"}}">{{date format="YYYY-MM-DD"}}</time> –
                                         {{reading_time}}</p>
                                 </div>
                             </li>
@@ -152,7 +152,7 @@ into the {body} of the default.hbs template --}}
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}}
+                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='没有文章' singular='% 篇文章' plural='查看 % 篇文章'}}
                             →</a>
                     </footer>
                 </article>
